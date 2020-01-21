@@ -127,6 +127,8 @@ lazy val root = (project in file("."))
   )) : _*)
   .settings(compile := ((compile in Compile) dependsOn script dependsOn genDoc).value)
 
+mainClass in (Compile, run) := Some("inox.Main")
+
 publishMavenStyle := true
 
 publishTo := {
